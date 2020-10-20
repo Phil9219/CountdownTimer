@@ -1,15 +1,20 @@
-export function Countdown() {
-  const container = document.createElement("div");
-  let timeLeft = 3;
-  container.innerText = timeLeft;
+// import "./app.css";
+// import { Countdown } from "./Countdown";
+import { CountdownForm } from "./CountdownForm";
 
-  const intervalId = setInterval(() => {
-    timeLeft--;
-    container.innerText = timeLeft;
-    if (timeLeft === 0) {
-      clearInterval(intervalId);
-      alert("Game Over");
-    }
-  }, 1000);
-  return container;
+export function App() {
+  // const countdown = Countdown();
+  // function onSubmit(value) {
+  //   countdown.innerText = value;
+  //   console.log(value);
+  // }
+  // const countdownForm = CountdownForm(onSubmit);
+  const app = document.createElement("div");
+  app.className = "app";
+  // app.append(countdownForm, countdown);
+  const countdownForm = CountdownForm((value) => {
+    app.append(Countdown(vlaue));
+  });
+  app.append(countdownForm);
+  return app;
 }
