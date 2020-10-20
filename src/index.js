@@ -1,4 +1,4 @@
-import { App } from "./App";
+import { Countdown } from "./App";
 
-const app = App();
+const app = Countdown();
 document.body.append(app);

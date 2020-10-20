@@ -1,8 +1,15 @@
-import "./app.css";
+export function Countdown() {
+  const container = document.createElement("div");
+  let timeLeft = 3;
+  container.innerText = timeLeft;
 
-export function App() {
-  const app = document.createElement("div");
-  app.className = "app";
-  app.innerHTML = "<b>Awesome</b> Webpack Template!";
-  return app;
+  const intervalId = setInterval(() => {
+    timeLeft--;
+    container.innerText = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(intervalId);
+      alert("Game Over");
+    }
+  }, 1000);
+  return container;
 }
